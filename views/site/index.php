@@ -39,7 +39,8 @@ $this->title = 'My Yii Application';
 					0 => 'Нет',
 					1 => 'Да',
 				],
-			]
+			],
+			'empty'
 		],
 	]); ?>
 </div>

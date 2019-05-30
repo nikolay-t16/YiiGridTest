@@ -43,6 +43,10 @@ $config = [
             ],
         ],
         'db' => $db,
+		'formatter' => [
+			'class' => 'yii\i18n\Formatter',
+			'nullDisplay' => 'нет данных',
+		],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
