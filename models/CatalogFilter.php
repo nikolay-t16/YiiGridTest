@@ -19,6 +19,22 @@ class CatalogFilter extends Model {
 	public $price;
 	public $hidden;
 
+	public function __construct($request, array $config = []) {
+		parent::__construct($config);
+		$filter = $request->get('CatalogFilter');
+		if(!$filter)
+			return;
+		if($filter["id"])
+			$this->id = $filter["id"];
+		if($filter["price"])
+			$this->price = $filter["price"];
+		if($filter["hidden"])
+			$this->hidden = $filter["hidden"];
+		if($filter["categoryName"])
+			$this->categoryName = $filter["categoryName"];
+
+	}
+
 	public function filter(array $data)
 	{
 		foreach($data AS $rowIndex => $row) {

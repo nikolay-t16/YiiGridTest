@@ -19,7 +19,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
 		$request = Yii::$app->request;
-		$searchModel = new CatalogFilter();
+		$searchModel = new CatalogFilter($request);
     	list ($products, $categories) = Catalog::GetCatalog($request);
 		$provider = new ArrayDataProvider([
 			'allModels' => $products,
